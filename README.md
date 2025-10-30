@@ -1,5 +1,6 @@
 ## Desktop Queue Header Widget
 
+<img width="1128" height="211" alt="image" src="https://github.com/user-attachments/assets/ce4326a2-ccf1-4a8a-8062-be744d7bda28" />
 
 
 ### Executing the sample
