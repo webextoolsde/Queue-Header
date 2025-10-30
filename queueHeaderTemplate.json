@@ -27,8 +27,6 @@
             "datacenter": "us1"
           }
         },
-
-        
         {"comp": "agentx-webex"},
         {"comp": "ai-assistant" },
         {"comp": "agentx-outdial"},
