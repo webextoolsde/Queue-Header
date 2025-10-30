@@ -16,6 +16,25 @@
       "widgets": { "comp1": { "comp": "div" } },
       "layout": { "areas": [["comp1"]], "size": { "cols": [1], "rows": [1] } }
     },
+      "advancedHeader": [
+        {
+          "comp": "rss-widget",
+          "script": "https://webextoolsde.github.io/Queue-Header/src/build/queue-header-widget.js",
+          "properties": {
+            "is-dark-mode": "$STORE.app.darkMode"
+          },
+          "attributes": {
+            "datacenter": "us1"
+          }
+        },
+
+        
+        {"comp": "agentx-webex"},
+        {"comp": "ai-assistant" },
+        {"comp": "agentx-outdial"},
+        {"comp": "agentx-notification"},
+        {"comp": "agentx-state-selector"}
+      ],
     "panel": {
       "comp": "md-tabs",
       "attributes": { "class": "widget-tabs" },
@@ -85,53 +104,7 @@
       ]
     },
     "navigation": [
-      {
-        "nav": {
-          "label": "Call History",
-          "icon": "call-voicemail",
-          "iconType": "momentum",
-          "navigateTo": "agent-history-list",
-          "align": "top"
-        },
-        "page": {
-          "id": "agent-history-list",
-          "widgets": {
-            "comp2": {
-              "comp": "div",
-              "style": {
-                "height": "100%",
-                "overflow": "scroll"
-              },
-              "children": [
-                {
-                  "comp": "agent-history-list",
-                  "script": "http://localhost:5000/build/bundle.js",
-                  "wrapper": {
-                    "title": "Call History",
-                    "maximizeAreaName": "app-maximize-area"
-                  },
-                  "attributes": {
-                    "darkmode": "$STORE.app.darkMode"
-                  },
-                  "properties": {
-                    "bearerToken": "$STORE.auth.accessToken",
-                    "outdialEp": "2df8d2e9-aac0-4b58-8bff-acb975c1d74c",
-                    "organizationId":"febe91de-9246-4ec4-9972-020480615eac",
-                    "datacenter":"us1"
-                  }
-                }
-              ]
-            }
-          },
-          "layout": {
-            "areas": [["comp2"]],
-            "size": {
-              "cols": [1],
-              "rows": [1]
-            }
-          }
-        }
-      }
+      
     ]
   }
 }
