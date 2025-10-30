@@ -1,6 +1,6 @@
 {
   "version": "0.0.6",
-  "appTitle": "CallHistory Widget Sample",
+  "appTitle": "Queue Header Widget Sample",
   "logo": "",
   "dragDropEnabled": true,
   "notificationTimer": 8,
