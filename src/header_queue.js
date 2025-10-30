@@ -206,19 +206,37 @@ class header_queue extends HTMLElement {
     logger.error("header_queue", items);
     logger.error("header_queue", items.data.task.tasks[0].aggregation[0].name);
     logger.error("header_queue", items.data.task.tasks[0].aggregation[0].value);
-    if(items.data.task.tasks[0].aggregation[0].value == 0.0){
+    logger.error("header_queue", queuedata.data.task.tasks[0]);
+    if (queuedata.data.task.tasks.length == 0) {
+      if(items.data.task.tasks[0].aggregation[0].value == 0.0){
+      this.$field.innerHTML = `
+        <div class="value is-zero"> Queued Calls:${items.data.task.tasks[0].aggregation[0].value}</div>
+        <div class="value">Total Calls: 0</div>`;
+      }else if(items.data.task.tasks[0].aggregation[0].value < 3.0){
+        this.$field.innerHTML = `
+          <div class="value lt-2"> Queued Calls:${items.data.task.tasks[0].aggregation[0].value}</div>
+          <div class="value">Total Calls: 0</div>`;
+      }else if(items.data.task.tasks[0].aggregation[0].value > 2.0){
+        this.$field.innerHTML = `
+          <div class="value gt-2">Queued Calls:${items.data.task.tasks[0].aggregation[0].value}</div>
+          <div class="value">Total Calls: 0</div>`;
+      }
+    }else{
+      if(items.data.task.tasks[0].aggregation[0].value == 0.0){
       this.$field.innerHTML = `
         <div class="value is-zero"> Queued Calls:${items.data.task.tasks[0].aggregation[0].value}</div>
         <div class="value">Total Calls:${queuedata.data.task.tasks[0].aggregation[0].value}</div>`;
-    }else if(items.data.task.tasks[0].aggregation[0].value < 3.0){
-      this.$field.innerHTML = `
-        <div class="value lt-2"> Queued Calls:${items.data.task.tasks[0].aggregation[0].value}</div>
-        <div class="value">Total Calls:${queuedata.data.task.tasks[0].aggregation[0].value}</div>`;
-    }else if(items.data.task.tasks[0].aggregation[0].value > 2.0){
-      this.$field.innerHTML = `
-        <div class="value gt-2">Queued Calls:${items.data.task.tasks[0].aggregation[0].value}</div>
-        <div class="value">Total Calls:${queuedata.data.task.tasks[0].aggregation[0].value}</div>`;
+      }else if(items.data.task.tasks[0].aggregation[0].value < 3.0){
+        this.$field.innerHTML = `
+          <div class="value lt-2"> Queued Calls:${items.data.task.tasks[0].aggregation[0].value}</div>
+          <div class="value">Total Calls:${queuedata.data.task.tasks[0].aggregation[0].value}</div>`;
+      }else if(items.data.task.tasks[0].aggregation[0].value > 2.0){
+        this.$field.innerHTML = `
+          <div class="value gt-2">Queued Calls:${items.data.task.tasks[0].aggregation[0].value}</div>
+          <div class="value">Total Calls:${queuedata.data.task.tasks[0].aggregation[0].value}</div>`;
+      }
     }
+    
     
   }
   //setBusy(b){ this.$spinner.classList.toggle("hidden",!b); }
