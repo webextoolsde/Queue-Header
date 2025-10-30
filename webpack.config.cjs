@@ -5,7 +5,7 @@ const config = {
   entry: "./src/header_queue.js",
   output: {
     path: path.resolve(__dirname, "src/build"),
-    filename: "rss-widget.js",
+    filename: "queue-header-widget.js",
     publicPath: "build/"
   },
   module: {
