@@ -255,5 +255,5 @@ class header_queue extends HTMLElement {
   }
 }
 
-customElements.define("header_queue", header_queue);
+customElements.define("headerqueue", header_queue);
 
