@@ -18,7 +18,7 @@
     },
       "advancedHeader": [
         {
-          "comp": "rss-widget",
+          "comp": "header_queue",
           "script": "https://webextoolsde.github.io/Queue-Header/src/build/queue-header-widget.js",
           "properties": {
             "is-dark-mode": "$STORE.app.darkMode"
