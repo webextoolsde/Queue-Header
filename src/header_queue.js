@@ -34,7 +34,7 @@ class header_queue extends HTMLElement {
     this.$field = this.shadowRoot.getElementById("rss-widget");
     const datacenter = this.datacenter;
     logger.info("header_queue", "datacenter" +datacenter);
-    this.baseUrl = this.getAttribute("base-url") || "https://api.wxcc-eu2.cisco.com/search";
+    this.baseUrl = this.getAttribute("base-url") || "https://api.wxcc-eu1.cisco.com/search";
     this.timer = null;
     this.auto = true;
   }
